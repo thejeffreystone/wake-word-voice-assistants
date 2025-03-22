@@ -118,6 +118,11 @@ voice_assistant:
         green: 0%
         brightness: 100%
         effect: none
+  on_tts_end:
+    - homeassistant.service:
+        service: script.jarvis_assist_response
+        data: 
+          response: !lambda 'return x;'
   on_end:
     - delay: 100ms
     - script.execute: start_wake_word
