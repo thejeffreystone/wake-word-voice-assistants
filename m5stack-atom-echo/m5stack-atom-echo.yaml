@@ -123,6 +123,8 @@ voice_assistant:
         service: script.jarvis_assist_response
         data: 
           response: !lambda 'return x;'
+    - delay: 100ms
+    - script.execute: start_wake_word
   on_end:
     - delay: 100ms
     - script.execute: start_wake_word
