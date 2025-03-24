@@ -120,7 +120,7 @@ voice_assistant:
         effect: none
   on_tts_end:
     - homeassistant.service:
-        service: script.jarvis_assist_response
+        service: ${echo_assist_script}
         data: 
           response: !lambda 'return x;'
     - delay: 100ms
