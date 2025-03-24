@@ -274,6 +274,17 @@ script:
 
 switch:
   - platform: template
+    name: Timer Ringing
+    optimistic: true
+    lambda: |-
+      if (id(timer_ringing).state) {
+        return true;
+      } else {
+        return false;
+      }
+    turn_off_action:
+        - switch.turn_off: timer_ringing
+  - platform: template
     name: Use listen light
     id: use_listen_light
     optimistic: true
